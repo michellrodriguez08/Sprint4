@@ -1,0 +1,149 @@
+/*structural styles */
+body{
+  font-family: "Times New Roman", serif;
+  margin: 0 50px 0 50px;
+}
+
+input[type = text] {
+  width: 100%;
+  height: 30px;
+}
+
+input[type = email], input[type = date], input[type = tel] {
+  width: 100%;
+}
+
+.hidden
+{
+  display:none;
+}
+
+#selected {
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 30px 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 50%;
+  font-family: "Times New Roman", serif;
+}
+
+/*header styles*/
+#theLogo{
+  width: 200px;
+  height: 95px;
+  text-align: center;
+}
+
+
+header {
+  text-align: center;
+}
+
+/*text styles*/
+h1 {
+  text-align: center;
+  color: #d6b6ae;
+}
+
+
+h2{
+  padding-bottom: 40px;
+  color: #d6b6ae;
+  text-align: center;
+  padding-top: 20px;
+}
+
+h3{
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+
+.error
+{
+  color: red;
+}
+
+em {
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  font-family: "Times New Roman", serif;
+}
+
+
+#typewriter p, #choose_welcome p, #aisle p,
+#package5 p {
+	text-align: center;
+  content-align: center;
+}
+
+/*button styles*/
+#button {
+  display: block;
+  float: right;
+}
+
+/*border styles*/
+#estimated {
+  border-top-style: solid;
+  border-top-color: #bdbdbd;
+  width: 85%;
+  display:block;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+#layeredArch, #modernRound, #darkWalnut, #vintageMirror, #rusticWood {
+  display: none;
+}
+#layeredArch p {
+  text-align: center;
+  font-size: x-large;
+}
+
+/*progress bar styles*/
+.progress {
+   margin-left: auto;
+   margin-right:auto;
+
+ }

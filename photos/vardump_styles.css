@@ -1,0 +1,109 @@
+/*structural styles */
+body{
+  font-family: "Times New Roman", serif;
+  margin: 0 50px 0 50px;
+}
+
+#form {
+  text-align: left;
+  margin: 20px 300px 0 300px;
+}
+
+#selected, #form {
+  text-align: left;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 30px 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 50%;
+  font-family: "Times New Roman", serif;
+}
+
+li {
+  margin-left: 10px;
+}
+
+/*header styles*/
+#theLogo{
+  width: 200px;
+  height: 95px;
+  text-align: center;
+}
+
+
+header {
+  text-align: center;
+}
+
+/*text styles*/
+h1 {
+  text-align: center;
+  color: #d6b6ae;
+}
+
+
+h2{
+  padding-bottom: 40px;
+  color: #d6b6ae;
+  text-align: center;
+}
+
+h3{
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+em {
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+.center, #form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  font-family:"Times New Roman", serif;
+}
+
+.details  {
+  text-align: left;
+  font-weight: bold;
+}
+
+/*button styles*/
+#button {
+  display: block;
+  float: right;
+}
+
+input[type = text] {
+  width: 100%;
+  height: 30px;
+}
+input[type = date] {
+  width: 100%;
+}
+
+/*border styles*/
+#estimated {
+  border-top-style: solid;
+  border-top-color: #bdbdbd;
+  width: 85%;
+  display:block;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*progress bar styles*/
+.progress {
+   margin-left: auto;
+   margin-right:auto;
+ }
