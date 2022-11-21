@@ -10,7 +10,7 @@ $packagePrice = 0;
     $table = "reservations";
     $date = $_POST['date'];
     $count = checkItemDateOverlap($item,$table,$date);
-    echo "<p>$count reservations on $date.</p>";
+    //echo "<p>$count reservations on $date.</p>";
     function checkItemDateOverlap($item, $table, $date) {
     global $cnxn;
     global $set;
@@ -686,7 +686,7 @@ if ($_POST['set'] == "Rustic Wood") {
     echo '<input type = "hidden" name = "set" value = "'.$set.'">';
     echo '<input type = "hidden" name = "date" value = "'.$date.'">';
 
-    echo var_dump($_POST);
+    //echo var_dump($_POST);
     ?>
     
 
