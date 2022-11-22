@@ -22,7 +22,7 @@ echo '<input type = "hidden" name = "pword" value = "'.$pword.'">';
 
 // mySQLi -------
 // if condition is met (admin login form submits username and username is not empty) display administration page
-// if(isset($uname) & $uname != "") {
+if(isset($uname) & $uname != "") {
 echo "
     <br>
     <br>
@@ -44,5 +44,6 @@ echo "
 </body>
 
 ";
+}
 
 ?>
