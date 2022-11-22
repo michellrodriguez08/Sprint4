@@ -9,8 +9,7 @@
 
 <body>
 <header>
-    <a href="https://blueteam2022.greenriverdev.com/Wedding_Website/Main/">
-        <img alt="logo img" id="theLogo" src="logo.png"></a>
+    <br>
     <br>
 
     <div class="container-fluid">
