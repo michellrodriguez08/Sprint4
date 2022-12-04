@@ -24,23 +24,19 @@ echo '<input type = "hidden" name = "pword" value = "'.$pword.'">';
 // if condition is met (admin login form submits username and username is not empty) display administration page
 if(isset($uname) & $uname != "") {
 echo "
-    <br>
-    <br>
-    <button type='button' onclick='window.location.href=`https://blueteam2022.greenriverdev.com/clientQuery.php`;' id= 'showAll'>Show All Reservations</button><br><br>
-    <button type='button' onclick='window.location.href=`https://blueteam2022.greenriverdev.com/clientQuery.php`;' id= 'layeredArch'>Layered Arch Reservations</button><br><br>
-    <button type='button' onclick='window.location.href=`https://blueteam2022.greenriverdev.com/clientQuery.php`;' id= 'modernRound'>Modern Round Reservations</button><br><br>
-    <button type='button' onclick='window.location.href=`https://blueteam2022.greenriverdev.com/clientQuery.php`;' id= 'rusticWood'>Rustic Wood Reservations</button><br><br>
-    <button type='button' onclick='window.location.href=`https://blueteam2022.greenriverdev.com/clientQuery.php`;' id= 'darkWalnut'>Dark Walnut Reservations</button><br><br>
-    <button type='button' onclick='window.location.href=`https://blueteam2022.greenriverdev.com/clientQuery.php`;' id= 'vintageMirror'>Vintage Mirror Reservations</button>
-    <br>
-    <br>
-<label>
-    <h4>Choose by Date</h4>
-    <input type='date' name='date'>
-    <button type='button' onclick='window.location.href='https://blueteam2022.greenriverdev.com/clientQuery.php';' id='date'>Search by Date</button>
-
-</label>
-
+    <center><br><br>
+    <form action='/clientQuery.php' method='GET' >
+        <select name = 'view'>
+            <option value='all'>View All Set Reservations</option>
+            <option value='layered'>View Layered Arch Set Reservations</option>
+            <option value='modern'>View Modern Round Set Reservations</option>
+            <option value='vintage'>View Vintage Mirror Set Reservations</option>
+            <option value='dark'>View Dark Walnut Set Reservations</option>
+            <option value='rustic'>View Rustic Wood Set Reservations</option>
+        </select>
+    <input type='submit' value='Submit'>
+    </form>
+    </center>
 </body>
 
 ";
