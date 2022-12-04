@@ -71,7 +71,7 @@
         </div>
         
         <br><label for="date">Pick Your Date: </label><br>
-        <input type="date" name="date">
+        <input type="date" name="date" min="<?= date('Y-m-d'); ?>">
 
         <br><br><input type="submit" id="button"><br><br>
         
