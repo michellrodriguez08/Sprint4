@@ -1,3 +1,16 @@
+<?php
+    // <!--echo 'Hello '.$_COOKIE['fname']. '!<br>'; -->
+    
+    if(isset($_POST['submit'])){
+    // set cookie for guest name
+    setcookie("fname", $_POST["fname"], time() + (86400 * 30), "/");
+    echo 'Thanks for booking with us '.$_COOKIE['fname']. '!<br>'; 
+    
+    }
+    
+?>
+
+
 <html>
   <head>
     <title>Confirmation Page - Walnut Ridge Wedding Styles</title>
@@ -50,6 +63,7 @@ The Walnut Ridge Wedding Rental Team will be confirming your order and sending y
             if ($upgrade_if_statement) {
                 echo $upgrade_package.'</br>';
             } else {
+                //echo $package. '</br>';
                 echo $_POST['package'].'</br>';
             }
 
@@ -98,6 +112,7 @@ The Walnut Ridge Wedding Rental Team will be confirming your order and sending y
     $package = $_POST["package"];
     $delivery = $_POST["delivery_option"];
     $email = $_POST["email"];
+    $email2 = $_POST["email2"];
     $first_name = $_POST["fname"];
     $last_name = $_POST["lname"];
     $total = $_POST["price"];
@@ -114,6 +129,8 @@ The Walnut Ridge Wedding Rental Team will be confirming your order and sending y
     echo '<input type = "hidden" name = "delivery" value = "'.$delivery.'">';
     echo '<input type = "hidden" name = "upgrade" value = "'.$upgrade_total_price.'">';
     echo '<input type = "hidden" name = "package" value = "'.$upgrade_package.'">';
+    
+    // echo var_dump($_POST);
 
     ?>
 
@@ -162,6 +179,8 @@ The Walnut Ridge Wedding Rental Team will be confirming your order and sending y
     $sql5 = "UPDATE reservations 
     SET endDate=DATE_ADD(reservation_date,INTERVAL 2 DAY);";
     $result5 = mysqli_query($cnxn, $sql5);
+    
+    // echo '<center> <a href="https://blueteam2022.greenriverdev.com/Wedding_Website_Sprint_3/admin_login.php">Administration Login</a> </center></br></br>';
 
 
 ?>
@@ -303,8 +322,138 @@ if(isset($email)) {
   mail($to,$subject,$message,$headers);
 }
 ?>
-
-
-
-
+<?php
+//if condition is met (customer submits email in reserve page), then send out the email
+if(isset($email2)) {
+  
+  $to = $email2;
+  $subject = "Walnut Ridge Wedding Rentals Order Confirmation";
+  $headers = "From: Walnutridgeleathercompany@gmail.com" . "\r\n" .
+  
+  $message = "
+  <html>
+    <head>
+      <style>
+        html{
+          font-family: 'Times New Roman', serif;
+          color: black;
+        }
+        h1 {
+            text-align: center;
+            color: #d6b6ae;
+          }
+        p {
+            text-align: center;
+            color: black;
+        }
+        em {
+            text-align: center;
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: underline;
+        }
+        #estimated {
+             border-top-style: solid;
+             border-top-color: #bdbdbd;
+             width: 85%;
+             display:block;
+             margin: auto;
+             margin-top: 10px;
+             margin-bottom: 10px;
+             color: black;   
+  
+        }
+        #selected, #form {
+              border: 1px solid;
+              border-radius: 10px;
+              padding: 30px 20px;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              margin-top: 30px;
+              margin-bottom: 30px;
+              width: 50%;
+              color: black;   
+        }
+        #theLogo {
+              width: 200px;
+              height: 95px;
+              text-align: center;
+              align-content: center;
+              margin-left: auto;
+              margin-right: auto;
+        }
+        b {
+            text-align: center;
+        }
+      </style>
+    </head>
+  
+  <body>
+  <header>
+  <center>
+    <a href='https://blueteam2022.greenriverdev.com/Wedding_Website/Main/'><img alt='logo img' id='theLogo' src='https://images.squarespace-cdn.com/content/v1/5d5c1c761244af000131c2bb/4ee74135-1a9c-47a5-ad20-3c796b60ef0c/WRNEWLOGOnobkground.png?format=1500w'></a>
+      <h1>Order Confirmation Receipt</h1>
+  </center>
+  </header>
+  
+  <p><strong>Dear ".ucwords($first_name)." ".ucwords($last_name).",</strong><br> </p>
+  <p><strong>Thank you for your order!</strong></p>
+  <p>The details of your order are listed below:</p>
+            <section id='selected'>
+              <h3>
+                  <center><em>Order Summary:</em></center>
+              </h3>
+  
+              <b>Reservation Date: </b>".$date."<br>
+  
+              <b>Set: </b>".$set."<br>
+  
+              <b>Package: </b>".$package."<br>
+  
+              <b>Extras: </b>".$_POST['extras'] ."<br>
+  
+              <b>Delivery: </b>".$_POST["delivery"]."
+  
+              <div id='estimated'></div>
+              <b>Total estimated price: </b>
+              " . '$' . number_format($_POST['price'], 2, '.', ',') . "</br>
+            </section>
+  
+            <section id='form'>
+              <h3>
+                <center><em>Customer Contact Details:</em></center>
+              </h3>
+              <b>Name: </b>
+              " . ucwords($_POST['fname']) . "
+              " . ucwords($_POST['lname']) . "<br>
+              <b>Email: </b>
+              " . $_POST['email'] . " " . "<br>
+              <b>Phone Number: </b>
+              " . $_POST['phone'] . " " . "<br>
+            </section>
+        <p>In the mean time, hang tight ~ we're working on making your dream wedding come true!</p>
+      <p>If you have any questions or concerns, feel free to <a href='https://www.walnutridgeweddingrentals.com/contact-us'>contact us</a>.</p><br>
+  
+      <p><strong>All the best,</strong></p>
+      <p><strong>Walnut Ridge Wedding Rentals Team</strong></p>
+    </body>
+  </html>
+  ";
+  
+  // TEST to show what email looks like - REMOVE LATER
+  //echo $message;    
+  
+  
+  // Always set content-type when sending HTML email
+  $headers = "MIME-Version: 1.0" . "\r\n";
+  $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+  
+  // More headers
+  $headers .= 'From: <Walnutridgeleathercompany@gmail.com>' . "\r\n";
+  // $headers .= 'Cc: myboss@example.com' . "\r\n"; 
+  
+  mail($to,$subject,$message,$headers);
+}
+?>
 
