@@ -25,7 +25,7 @@ echo '<input type = "hidden" name = "pword" value = "'.$pword.'">';
 if(isset($uname) & $uname != "") {
 echo "
     <center><br><br>
-    <form action='/clientQuery.php' method='GET' >
+    <form action='/clientQuery.php' method='POST' >
         <select name = 'view'>
             <option value='all'>View All Set Reservations</option>
             <option value='layered'>View Layered Arch Set Reservations</option>
