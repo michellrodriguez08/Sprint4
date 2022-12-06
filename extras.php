@@ -1,3 +1,11 @@
+<?php
+    if(isset($_COOKIE['fname'])){
+        echo 'Thanks for booking with us '.$_COOKIE['fname']. '!<br>'; 
+    }
+
+?>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +18,6 @@
 
 <body>
 <?php
-
 $set = $_POST['set'];
 $package = $_POST["package"];
 //CALCULATE PACKAGE PRICE
@@ -208,8 +215,8 @@ elseif($_POST['set'] == "Rustic Wood") {
             </div>
 
             <div class="col">
-                <input type="checkbox" name="none" value="None">
-                <label for="none">None</label>
+                <input type="checkbox" name="HexArbor" value="Hexagon Arbor">
+                <label for="HexArbor">Hexagon Arbor - $350<img src = "photos/IMG_8110.jpg"  width = "100%" alt = "Vintage Couch" class="rounded-pill"</label>
             </div>
         </div>
         <br>
@@ -437,6 +444,8 @@ elseif($_POST['set'] == "Rustic Wood") {
         </section>
 
         <br><input type="submit" id="button">
+        <br>
+        <br>
         <?php
 
         $date = $_POST["date"];
@@ -445,7 +454,6 @@ elseif($_POST['set'] == "Rustic Wood") {
         $aisleRunner = $_POST["aisleRunner"];
         $typeWriter = $_POST["typeWriter"];
         $delivery = $_POST["delivery_option"];
-
         $upgrade = $_POST['modern_package_option'];
 
 
@@ -458,7 +466,6 @@ elseif($_POST['set'] == "Rustic Wood") {
         echo '<input type = "hidden" name = "aisleRunner" value = "'.$aisleRunner.'">';
         echo '<input type = "hidden" name = "typeWriter" value = "'.$typeWriter.'">';
         echo '<input type = "hidden" name = "delivery" value = "'.$delivery.'">';
-
         echo '<input type = "hidden" name = "upgrade" value = "'.$upgrade.'">';
 
         ?>
