@@ -1,4 +1,19 @@
 <?php
+    // set cookie for set name
+    setcookie("set", $_POST["set"], time() + (86400 * 30), "/");
+    
+    // set cookie for date
+    setcookie("date", $_POST["date"], time() + (86400 * 30), "/");
+
+
+    if(isset($_COOKIE['fname'])){
+    echo 'Thanks for booking with us '.$_COOKIE['fname']. '!<br>'; 
+    
+    } 
+    
+    
+
+
 $set = $_POST["set"];
 $date = $_POST["date"];
 $packagePrice = 0;
@@ -10,7 +25,7 @@ $packagePrice = 0;
     $table = "reservations";
     $date = $_POST['date'];
     $count = checkItemDateOverlap($item,$table,$date);
-    //echo "<p>$count reservations on $date.</p>";
+   // echo "<p>$count reservations on $date.</p>";
     function checkItemDateOverlap($item, $table, $date) {
     global $cnxn;
     global $set;
@@ -20,7 +35,7 @@ $packagePrice = 0;
     '$finish')";
     $result = @mysqli_query($cnxn, $sql);
     $howmany = mysqli_num_rows($result);
-    echo "<p>$howmany reservations on $date.</p>";
+    // echo "<p>$howmany reservations on $date.</p>";
     return $howmany;
     }
     global $howmany;
