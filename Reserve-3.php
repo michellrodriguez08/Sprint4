@@ -1,3 +1,14 @@
+<?php
+    
+    // set cookie name
+    if(isset($_COOKIE['fname'])){
+    echo 'Thanks for booking with us '.$_COOKIE['fname']. '!<br>'; 
+    
+    
+    } 
+?>
+
+
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -45,6 +56,7 @@
             $jugs_price = 4.00;
             $clearJar_price = 30.00;
             $blueJar_price = 30.00;
+            $hexArbor_price = 350.00;
             
             if(isset($_POST['vintage_couch'])) {
               $total_price = $total_price + $couch_price;
@@ -66,9 +78,9 @@
               $total_price = $total_price + $blueJar_price;
               $extras .= '<li>'.$_POST['blue_ball_jars'].'</li>';
             }
-            if(isset($_POST['none'])) {
-              $total_price = $total_price;
-              $extras .= '<li>'.$_POST['none'].'</li>';
+            if(isset($_POST['HexArbor'])) {
+              $total_price = $total_price + $hexArbor_price;
+              $extras .= '<li>'.$_POST['HexArbor'].'</li>';
             }
 
 
@@ -289,9 +301,10 @@
             
             echo '<b>Package: </b>';
             if ($upgrade_if_statement) {
-                echo $package.'</br>';
+                echo $upgrade_package.'</br>';
             } else {
-                echo $_POST['package'] . '</br>';
+                //echo $package. '</br>';
+                echo $_POST['package'].'</br>';
             }
             
             echo '<b>Extras: </b>';
@@ -342,13 +355,16 @@
   
             <label for="email">Email*:</label><br>
             <input type="email" id="email" name="email" required  pattern=".+@*" placeholder="Please provide your email address"><br>
-  
+            
+            <label for="email2">Secondary Email (in case you want anyone else to get a confirmation email!):</label><br>
+            <input type="email" id="email2" name="email2"  pattern=".+@*" placeholder="Please provide your secondary email address"><br>
+            
             <label for="phone">Phone*:</label><br>
             <input type="text" id="phone" onkeydown="formatPhoneNumber1()" name="phone" required placeholder="Please provide your phone number"><br>
   
             <div id="error_phone" class="error hidden">Please enter a valid phone number.</div><br>
   
-            <input type="submit" id="button">
+            <input type="submit" name="submit" id="button">
   
             <?php
             $set = $_POST["set"];
@@ -402,7 +418,8 @@
     
      echo '<input type = "hidden" name = "random" value = "'.$random.'">';
 
-    
+    // echo var_dump($_POST);
+
                 
 
 ?>
