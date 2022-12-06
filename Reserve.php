@@ -1,6 +1,12 @@
 <?php
+    // if(isset($_POST['submit'])){
+    // //   $fname = htmlentities($_POST['fname']);
+    // //   setcookie('fname', $fname, time()+3600);
+       
+    // echo 'Thanks for booking with us '.$_COOKIE['fname']. '!<br>'; 
+
+    // }
     
-    // set cookie name
     if(isset($_COOKIE['fname'])){
     echo 'Thanks for booking with us '.$_COOKIE['fname']. '!<br>'; 
     
@@ -97,8 +103,7 @@
                 $upgrade_total_price = $package_price + 100.00 + $total_price;
 
                 // set package to full set
-                $package = 'Full Set Rental';
-                $upgrade_package = $package;
+                $upgrade_package = 'Full Set Rental';
 
             }
 
@@ -107,8 +112,7 @@
                 // upgrade total price = package price (pick 4) + 150.00 (upgrade) + extras
                 $upgrade_total_price = $package_price + 150.00 + $total_price;
                 // set package to full set
-                $package = 'Full Set Rental';
-                $upgrade_package = $package;
+                $upgrade_package = 'Full Set Rental';
 
             }
             // pick 4 upgrade to pick 6
@@ -116,8 +120,7 @@
                 // upgrade total price = package price (pick 4) + 50.00 (upgrade) + extras
                 $upgrade_total_price = $package_price + 50.00 + $total_price;
                 // set package to full set
-                $package = 'PICK 6 Rental';
-                $upgrade_package = $package;
+                $upgrade_package = 'PICK 6 Rental';
             }
 
             // modern round
@@ -127,24 +130,21 @@
                 $upgrade_total_price = $package_price + 100.00 + $total_price;
 
                 // set package to full set
-                $package = 'Full Set Rental';
-                $upgrade_package = $package;
+                $upgrade_package = 'Full Set Rental';
             }
             // pick 4 - upgrade to full
             if ($_POST['yes_modern_4tofull'] == 'Yes') {
                 $upgrade_total_price = $package_price + 200.00 + $total_price;
 
                 // set package to full set
-                $package = 'Full Set Rental';
-                $upgrade_package = $package;
+                $upgrade_package = 'Full Set Rental';
             }
             // pick 4 - upgrade to pick 6
             if ($_POST['yes_modern_4to6'] == 'Yes') {
                 $upgrade_total_price = $package_price + 100.00 + $total_price;
 
                 // set package to pick 6
-                $package = 'PICK 6 Rental';
-                $upgrade_package = $package;
+                $upgrade_package = 'PICK 6 Rental';
             }
 
             // vintage mirror
@@ -154,8 +154,7 @@
                 $upgrade_total_price = $package_price + 200.00 + $total_price;
 
                 // set package to full set
-                $package = 'Platinum Package';
-                $upgrade_package = $package;
+                $upgrade_package = 'Platinum Package';
             }
             // pick 6 - upgrade to gold
             if ($_POST['yes_mirror_6to_gold'] == 'Yes') {
@@ -163,8 +162,7 @@
                 $upgrade_total_price = $package_price + 150.00 + $total_price;
 
                 // set package to full set
-                $package = 'Gold Package';
-                $upgrade_package = $package;
+                $upgrade_package = 'Gold Package';
             }
             // pick 4 - upgrade to platinum
             if ($_POST['yes_mirror_4to_plat'] == 'Yes') {
@@ -172,8 +170,7 @@
                 $upgrade_total_price = $package_price + 250.00 + $total_price;
 
                 // set package to full set
-                $package = 'Platinum Package';
-                $upgrade_package = $package;
+                $upgrade_package = 'Platinum Package';
             }
             // pick 4 - upgrade to gold
             if ($_POST['yes_mirror_4to_gold'] == 'Yes') {
@@ -181,8 +178,7 @@
                 $upgrade_total_price = $package_price + 100.00 + $total_price;
 
                 // set package to full set
-                $package = 'Gold Package';
-                $upgrade_package = $package;
+                $upgrade_package = 'Gold Package';
             }
             // pick 4 - upgrade to pick 6
             if ($_POST['yes_mirror_4to6'] == 'Yes') {
@@ -190,8 +186,7 @@
                 $upgrade_total_price = $package_price + 50.00 + $total_price;
 
                 // set package to full set
-                $package = 'PICK 6 Rental';
-                $upgrade_package = $package;
+                $upgrade_package = 'PICK 6 Rental';
             }
 
             // dark walnut
@@ -201,24 +196,21 @@
                 $upgrade_total_price = $package_price + 54.00 + $total_price;
 
                 // set package to full set
-                $package = 'Full Set Rental';
-                $upgrade_package = $package;
+                $upgrade_package = 'Full Set Rental';
             }
             // pick 4 - upgrade to full
             if ($_POST['yes_dark_4tofull'] == 'Yes') {
                 $upgrade_total_price = $package_price + 100.00 + $total_price;
 
                 // set package to full set
-                $package = 'Full Set Rental';
-              $upgrade_package = $package;
+              $upgrade_package = 'Full Set Rental';
             }
             // pick 4 - upgrade to pick 6
             if ($_POST['yes_dark_4to6'] == 'Yes') {
                 $upgrade_total_price = $package_price + 46.00 + $total_price;
 
                 // set package to pick 6
-                $package = 'PICK 6 Rental';
-                $upgrade_package = $package;
+                $upgrade_package = 'PICK 6 Rental';
             }
 
             // rustic wood
@@ -228,8 +220,7 @@
                 $upgrade_total_price = $package_price + 54.00 + $total_price;
 
                 // set package to full set
-                $package = 'Full Set Rental';
-                $upgrade_package = $package;
+                $upgrade_package = 'Full Set Rental';
             }
             // pick 4 - upgrade to full
             if ($_POST['yes_rustic_4to_full'] == 'Yes') {
@@ -237,8 +228,7 @@
                 $upgrade_total_price = $package_price + 100.00 + $total_price;
 
                 // set package to full set
-                $package = 'Full Set Rental';
-                $upgrade_package = $package;
+                $upgrade_package = 'Full Set Rental';
             }
             // pick 4 - upgrade to no seating rental
             if ($_POST['yes_rustic_4to_no_seat'] == 'Yes') {
@@ -246,8 +236,7 @@
                 $upgrade_total_price = $package_price + 46.00 + $total_price;
 
                 // set package to full set
-                $package = 'No Seating Rental';
-                $upgrade_package = $package;
+                $upgrade_package = 'No Seating Rental';
             }
 
             // TEST (to print out total cost with upgrade) - REMOVE LATER
@@ -304,7 +293,7 @@
                 echo $upgrade_package.'</br>';
             } else {
                 //echo $package. '</br>';
-                echo $_POST['package'].'</br>';
+                echo $_POST["package"].'</br>';
             }
             
             echo '<b>Extras: </b>';
@@ -378,7 +367,7 @@
             echo '<input type = "hidden" name = "date" value = "'.$date.'">';
             echo '<input type = "hidden" name = "extras" value = "'.$extras.'">';
             echo '<input type = "hidden" name = "package" value = "'.$package.'">';
-            echo '<input type = "hidden" name = "package" value = "'.$upgrade_package.'">';
+            echo '<input type = "hidden" name = "upgrade_package" value = "'.$upgrade_package.'">';
             echo '<input type = "hidden" name = "price" value = "'.$total_price.'">';
             echo '<input type = "hidden" name = "package_price" value = "'.$package_price.'">';
             echo '<input type = "hidden" name = "delivery" value = "'.$delivery.'">';
