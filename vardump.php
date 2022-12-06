@@ -8,6 +8,9 @@
     
     }
     
+    $upgrade_package = $_POST["upgrade_package"];
+    $package = $_POST["package"];
+    
 ?>
 
 
@@ -60,11 +63,11 @@ The Walnut Ridge Wedding Rental Team will be confirming your order and sending y
             echo $_POST['set'].'</br>';
 
             echo '<b>Package: </b>';
-            if ($upgrade_if_statement) {
-                echo $upgrade_package.'</br>';
+            if (isset($_POST["upgrade_package"]) && $_POST["upgrade_package"] != "") {
+                echo $_POST["upgrade_package"].'</br>';
             } else {
                 //echo $package. '</br>';
-                echo $_POST['package'].'</br>';
+                echo $_POST["package"].'</br>';
             }
 
             echo '<b>Extras: </b>';
@@ -128,7 +131,7 @@ The Walnut Ridge Wedding Rental Team will be confirming your order and sending y
     echo '<input type = "hidden" name = "price" value = "'.$total_price.'">';
     echo '<input type = "hidden" name = "delivery" value = "'.$delivery.'">';
     echo '<input type = "hidden" name = "upgrade" value = "'.$upgrade_total_price.'">';
-    echo '<input type = "hidden" name = "package" value = "'.$upgrade_package.'">';
+    echo '<input type = "hidden" name = "upgrade_package" value = "'.$upgrade_package.'">';
     
     // echo var_dump($_POST);
 
