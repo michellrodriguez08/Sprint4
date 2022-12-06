@@ -15,6 +15,8 @@
         table, td, th {
           border: 1px solid black;
           text-align: center;
+          padding: 10px 17px 10px 17px;
+
         }
         table {
           border-collapse: collapse;
@@ -36,16 +38,15 @@ require '/home/bluetea1/db.php';
 
 global $cnxn;
 
-$allRes = "SELECT * FROM `reservations` ORDER BY beginDate ASC ";
-
-$lArch = "SELECT * FROM `reservations` WHERE `setName` = 'Layered Arch' ORDER BY 'beginDate' ASC";
-$modRnd = "SELECT * FROM `reservations` WHERE `setName` = 'Modern Round'";
-$drkWal = "SELECT * FROM `reservations` WHERE `setName` = 'Dark Walnut'";
-$vintMir = "SELECT * FROM `reservations` WHERE `setName` = 'Vintage Mirror'";
-$rustWood = "SELECT * FROM `reservations` WHERE `setName` = 'Rustic Wood'";
+$allRes = "SELECT * FROM `reservations` ORDER BY beginDate ASC";
+$lArch = "SELECT * FROM `reservations` WHERE `SetName` = 'Layered Arch' ORDER BY beginDate ASC";
+$modRnd = "SELECT * FROM `reservations` WHERE `SetName` = 'Modern Round' ORDER BY beginDate ASC ";
+$drkWal = "SELECT * FROM `reservations` WHERE `SetName` = 'Dark Walnut' ORDER BY beginDate ASC ";
+$vintMir = "SELECT * FROM `reservations` WHERE `SetName` = 'Vintage Mirror' ORDER BY beginDate ASC ";
+$rustWood = "SELECT * FROM `reservations` WHERE `SetName` = 'Rustic Wood' ORDER BY beginDate ASC";
 
 // print out all reservations --------------
-if($_GET['view'] == 'all') {
+if($_POST['view'] == 'all') {
 $result = @mysqli_query($cnxn, $allRes);
 echo '<br>';
 echo '<h1><center>Client Reservations - All Sets</center></h1>';
@@ -114,7 +115,7 @@ echo '<br>';
 
 
 // print out LAYERED ARCH reservations --------------
-if($_GET['view'] == 'layered') {
+if($_POST['view'] == 'layered') {
 $result2 = @mysqli_query($cnxn, $lArch);
 echo '<br>';
 echo '<h1><center>Client Reservations - Layered Arch Set</center></h1>';
@@ -173,7 +174,7 @@ echo '<br>';
 
 
 // print out MODERN ROUND reservations --------------
-if($_GET['view'] == 'modern') {
+if($_POST['view'] == 'modern') {
 $result3 = @mysqli_query($cnxn, $modRnd);
 echo '<br>';
 echo '<h1><center>Client Reservations - Modern Round Set</center></h1>';
@@ -241,7 +242,7 @@ echo '<br>';
 } // END MODERN ROUND
 
 // print out VINTAGE MIRROR reservations --------------
-if($_GET['view'] == 'vintage') {
+if($_POST['view'] == 'vintage') {
 $result4 = @mysqli_query($cnxn, $vintMir);
 echo '<br>';
 echo '<h1><center>Client Reservations - Vintage Mirror Set</center></h1>';
@@ -292,14 +293,24 @@ while ($row = mysqli_fetch_assoc($result4))
 
   </tr>';
  
+    
+    // echo '<br>Set: '.$setName;
+    // echo '<br>Package: '.$package;
+    // echo '<br>Status: '. $status;
+    // echo '<br>Cost: '.$cost;
+    // echo '<br>Date (beginning): '. $begin;
+    // echo '<br>Date (end): '.$end;
+    // echo '<br>Order Number: '.$ordernum;
+    // echo '<br>Extras: '.$ordernum;
 
+    // echo '<br>';
 }
 echo '</table>';
 echo '<br>';
 } // END VINTAGE MIRROR
 
 // print out DARK WALNUT reservations --------------
-if($_GET['view'] == 'dark') {
+if($_POST['view'] == 'dark') {
 $result5 = @mysqli_query($cnxn, $drkWal);
 echo '<br>';
 echo '<h1><center>Client Reservations - Dark Walnut Set</center></h1>';
@@ -351,13 +362,23 @@ while ($row = mysqli_fetch_assoc($result5))
   </tr>';
  
     
+    // echo '<br>Set: '.$setName;
+    // echo '<br>Package: '.$package;
+    // echo '<br>Status: '. $status;
+    // echo '<br>Cost: '.$cost;
+    // echo '<br>Date (beginning): '. $begin;
+    // echo '<br>Date (end): '.$end;
+    // echo '<br>Order Number: '.$ordernum;
+    // echo '<br>Extras: '.$ordernum;
+
+    // echo '<br>';
 }
 echo '</table>';
 echo '<br>';
 } // END DARK WALNUT
 
 // print out RUSTIC WOOD reservations --------------
-if($_GET['view'] == 'rustic') {
+if($_POST['view'] == 'rustic') {
 $result6 = @mysqli_query($cnxn, $rustWood);
 echo '<br>';
 echo '<h1><center>Client Reservations - Rustic Wood Set</center></h1>';
@@ -408,6 +429,17 @@ while ($row = mysqli_fetch_assoc($result6))
 
   </tr>';
  
+    
+    // echo '<br>Set: '.$setName;
+    // echo '<br>Package: '.$package;
+    // echo '<br>Status: '. $status;
+    // echo '<br>Cost: '.$cost;
+    // echo '<br>Date (beginning): '. $begin;
+    // echo '<br>Date (end): '.$end;
+    // echo '<br>Order Number: '.$ordernum;
+    // echo '<br>Extras: '.$ordernum;
+
+    // echo '<br>';
 }
 echo '</table>';
 echo '<br>';
